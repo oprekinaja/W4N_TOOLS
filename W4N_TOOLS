@@ -1,0 +1,151 @@
+clear
+
+#!/bin/bash
+#version 1.0
+
+# Variables
+bl='\33[1;34m'
+green='33[1;32m'
+purple='\33[1;35m'
+c='\33[1;36m'
+r='\33[1;31m'
+w='\33[1;37m'
+y='\33[1;33m'
+endc='\0'
+enda='\033'
+NOW=`date "+%d.%m.%Y"`
+TIME=`date "+%H:%M"`
+
+figlet WAN_TOOLS | lolcat
+
+echo "____________________________________________________>
+echo Tools___________: wan.tools | lolcat
+echo Createby________: W4N_T3CH | lolcat
+echo Author__________: Deka_id/wan | lolcat
+echo Contact_________: Whatsapp : 0877-1434-5434 | lolcat
+echo  "___________________________________________________>
+date | lolcat
+echo  "___________________________________________________>
+
+
+###################################################
+# CTRL + C
+###################################################
+trap ctrl_c INT
+ctrl_c() {
+clear
+echo -e $red"[#]> (Ctrl + C ) Detected, Trying To Exit ...>
+echo -e $cyan"[#]> Thanks"
+sleep 1
+echo ""
+echo -e $yellow"[#]> See you gaes,jangan lupa berkunjung l>
+sleep 1
+exit
+}
+
+lagi=1
+while [ $lagi -lt 6 ];
+do
+echo ""
+echo $r"1.  Nmap${enda}";
+echo "============================" | lolcat
+echo $p"2.  SPAM SMS${endc}";
+echo "============================" | lolcat
+echo $y"3.  Sadap Camera${endc}";
+echo "============================" | lolcat
+echo $c"4   Hack Fb${endc}";
+echo "============================" | lolcat
+echo $bl"5.  Bahan${endc}";
+echo "============================" | lolcat
+echo $w"6. Exit${endc}";
+echo "============================" | lolcat
+echo ""
+echo "╭─W4N-T3CH" |lolcat
+read -p "╰─Silahkan masukan pilihan anda : " pil;
+
+# Nmap
+
+case $pil in
+1) pkg install nmap
+echo  "${y} {1} Masukkan Web${endc}:"
+read web
+nmap $web
+echo
+
+;;
+
+# SPAM SMS
+
+2) pkg install update && pkg install upgrade
+pkg install python2
+pkg install git
+pip2 install requests
+pip2 install mechanize
+git clone https://gitlab.com/ilmanmolana907/spamsms
+cd spamsms
+python2 SpamSms.py
+echo
+
+;;
+
+3) apt update
+apt upgrade
+pkg install python
+pkg install openssh
+pkg install php
+pkg install wget
+pkg install git
+git clone https://github.com/MR-WH5/C4Mpret
+cd C4Mpret
+bash campret.sh
+echo
+
+;;
+
+# Hack Fb
+
+4) apt update && apt upgrade
+apt install python
+apt install python2
+apt install ruby
+apt install git
+apt install wget
+apt install curl
+pip2 install mechanize
+pip2 install requests
+git clone https://github.com/hnov7/mbf
+echo "silahkan buka tab baru atau new session"
+echo "kemudian ketik :"
+cd mbf
+python2 mbf.py
+
+;;
+
+#Bahan
+
+5) pkg install update && pkg upgrade -y
+pkg install python2
+pkg install php
+pkg install bash
+pkg install nano
+pkg install git
+pkg install nmap
+pkg install curl
+apt install python
+apt install ruby
+apt install wget
+pip2 install mechanize
+pip2 install requests
+echo
+
+;;
+
+
+6) echo "created by : W4N_T3CH" | lolcat
+exit
+;;
+
+*) echo "Maaf Bro/sis, pilihan yang anda cari tidak ada"
+esac
+done
+done
